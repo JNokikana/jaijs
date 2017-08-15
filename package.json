@@ -1,0 +1,22 @@
+{
+  "name": "jaijs",
+  "version": "1.0.0",
+  "description": "A home AI node project.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Joonas Nousiainen",
+  "license": "SEE LICENSE IN LICENSE",
+  "dependencies": {
+    "node-microphone": "^0.1.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/JNokikana/jaijs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JNokikana/jaijs/issues"
+  },
+  "homepage": "https://github.com/JNokikana/jaijs#readme"
+}
