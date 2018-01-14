@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const Speakable = require('voice-recognition');
 
 var speakable = new Speakable({"key": "notused"});
