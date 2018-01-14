@@ -1,15 +1,29 @@
-const Microphone = require('node-microphone');
-const Fs = require('fs');
+const Speakable = require('voice-recognition');
 
-let microphone = new Microphone();
-let micStream = microphone.startRecording();
-micStream.pipe(Fs.createWriteStream('./testing.wav'));
+var speakable = new Speakable({"key": "notused"});
 
-setTimeout(() => {
-    console.info("Nauhoitus loppui.");
-    microphone.stopRecording();
-}, 5000);
+speakable.on('speechStart', function() {
+  console.log('onSpeechStart');
+});
 
-microphone.on('info', (info) => {
-    console.log(info);
-})
+speakable.on('speechStop', function() {
+  console.log('onSpeechStop');
+  speakable.recordVoice();
+});
+
+speakable.on('speechReady', function() {
+  console.log('onSpeechReady');
+});
+
+speakable.on('error', function(err) {
+  console.log('onError:');
+  console.log(err);
+  speakable.recordVoice();
+});
+
+speakable.on('speechResult', function(spokenWords) {
+  console.log('onSpeechResult:')
+  console.log(spokenWords);
+});
+
+speakable.recordVoice();

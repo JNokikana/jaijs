@@ -9,7 +9,6 @@
   "author": "Joonas Nousiainen",
   "license": "MIT",
   "dependencies": {
-    "node-microphone": "^0.1.3",
     "voice-recognition": "git+ssh://github.com/JNokikana/voice-recognition.git"
   },
   "repository": {
