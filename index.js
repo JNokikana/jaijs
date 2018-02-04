@@ -2,30 +2,31 @@ require('dotenv').config();
 
 const Speakable = require('voice-recognition');
 
-var speakable = new Speakable({"key": "notused"});
+var speakable = new Speakable({ "key": "notused" });
 
-speakable.on('speechStart', function() {
+speakable.on('speechStart', function () {
   console.log('onSpeechStart');
 });
 
-speakable.on('speechStop', function() {
+speakable.on('speechStop', function () {
   console.log('onSpeechStop');
   speakable.recordVoice();
 });
 
-speakable.on('speechReady', function() {
+speakable.on('speechReady', function () {
   console.log('onSpeechReady');
 });
 
-speakable.on('error', function(err) {
+speakable.on('error', function (err) {
   console.log('onError:');
   console.log(err);
   speakable.recordVoice();
 });
 
-speakable.on('speechResult', function(spokenWords) {
+speakable.on('speechResult', function (spokenWords) {
   console.log('onSpeechResult:')
   console.log(spokenWords);
 });
-
-speakable.recordVoice();
+speakable.init().then(() => {
+  speakable.recordVoice();
+});

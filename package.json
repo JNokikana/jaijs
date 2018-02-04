@@ -9,8 +9,8 @@
   "author": "Joonas Nousiainen",
   "license": "MIT",
   "dependencies": {
-    "voice-recognition": "git+ssh://github.com/JNokikana/voice-recognition.git",
-    "dotenv":"4.0.0"
+    "voice-recognition": "file:../voice-recognition",
+    "dotenv": "4.0.0"
   },
   "repository": {
     "type": "git",
