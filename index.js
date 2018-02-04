@@ -27,6 +27,7 @@ speakable.on('speechResult', function (spokenWords) {
   console.log('onSpeechResult:')
   console.log(spokenWords);
 });
+
 speakable.init().then(() => {
   speakable.recordVoice();
 });
